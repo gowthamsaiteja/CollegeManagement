@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:collegemanagement/Features/Admin/Screens/admin_dashboard.dart';
 
 class StudentLoginPage extends StatelessWidget {
   const StudentLoginPage({super.key});
@@ -9,7 +8,7 @@ class StudentLoginPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          
+          /// Background Image
           SizedBox(
             height: 360,
             width: double.infinity,
@@ -19,23 +18,19 @@ class StudentLoginPage extends StatelessWidget {
             ),
           ),
 
-          
+          /// Gradient overlay
           Container(
             height: 420,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [
-                  Colors.transparent,
-                  Color(0xFF0E1A2B),
-                ],
+                colors: [Colors.transparent, Color(0xFF0E1A2B)],
               ),
             ),
           ),
 
-          
-          
+          /// Login Card
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -43,21 +38,18 @@ class StudentLoginPage extends StatelessWidget {
               padding: const EdgeInsets.all(24),
               decoration: const BoxDecoration(
                 color: Color(0xFF0E1A2B),
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(30),
-                ),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
               ),
               child: const _LoginForm(),
             ),
           ),
 
-          
+          /// STUDENT PORTAL Badge
           Positioned(
             top: 30,
             left: 20,
             child: Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 18, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 border: Border.all(color: Colors.white70),
@@ -125,8 +117,10 @@ class _LoginForm extends StatelessWidget {
 
         const SizedBox(height: 28),
 
-        const Text("Student / Faculty ID",
-            style: TextStyle(color: Colors.white)),
+        const Text(
+          "Student / Faculty ID",
+          style: TextStyle(color: Colors.white),
+        ),
         const SizedBox(height: 8),
         TextField(
           style: const TextStyle(color: Colors.white),
@@ -135,8 +129,7 @@ class _LoginForm extends StatelessWidget {
 
         const SizedBox(height: 20),
 
-        const Text("Password",
-            style: TextStyle(color: Colors.white)),
+        const Text("Password", style: TextStyle(color: Colors.white)),
         const SizedBox(height: 8),
         TextField(
           obscureText: true,
@@ -159,11 +152,15 @@ class _LoginForm extends StatelessWidget {
 
         Row(
           children: const [
-            Checkbox(value: false, onChanged: null, activeColor: Color(0xFF2F80ED),side: const BorderSide(color: Color(0xFF137fec))),
+            Checkbox(
+              value: false,
+              onChanged: null,
+              activeColor: Color(0xFF2F80ED),
+              side: const BorderSide(color: Color(0xFF137fec)),
+            ),
             Text("Stay logged in", style: TextStyle(color: Colors.white70)),
             Spacer(),
-            Text("Forgot Password?",
-                style: TextStyle(color: Colors.blue)),
+            Text("Forgot Password?", style: TextStyle(color: Colors.blue)),
           ],
         ),
 
@@ -174,20 +171,16 @@ class _LoginForm extends StatelessWidget {
           height: 55,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF2F80ED),
+              elevation: 3.0,
+              backgroundColor: const Color.fromARGB(255, 60, 119, 197),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
             ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AdminDashboard()),
-              );
-            },
+            onPressed: () {},
             child: const Text(
               "Sign In →",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
             ),
           ),
         ),
@@ -199,8 +192,10 @@ class _LoginForm extends StatelessWidget {
             Expanded(child: Divider(color: Colors.white30)),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12),
-              child: Text("OR CONTINUE WITH",
-                  style: TextStyle(color: Colors.white54)),
+              child: Text(
+                "OR CONTINUE WITH",
+                style: TextStyle(color: Colors.white54),
+              ),
             ),
             Expanded(child: Divider(color: Colors.white30)),
           ],
